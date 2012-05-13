@@ -1,0 +1,17 @@
+body {
+    line-height: 1.5em;
+}
+
+table, th, tr, td {
+    border: solid 1px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: grey;
+}
+
+.emph {
+    font-weight: bold;
+}
