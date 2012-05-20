@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<title>Conversor CelFar</title>
-<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+    <meta charset="utf-8" />
+    <title>Conversor CelFar</title>
+    <script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="js/bugomatic.js"></script>
 </head>
 <body>
 <script type="text/javascript">
-  var validators = { "globals" :
-                    [
+  $(document).ready(function() {
+    new BugOMatic('js').start();
+  });
+  var VAL_DECIMALS = 0;
+  var VAL_LENGTH = 1;
+  var VAL_ZERO = 2;
+  var validators = [
                         {"valid" : function(input) {return input.length != 0 && !isNaN(input);}, "error": "El valor ingresado no es un número (recuerde que los decimales deben expresarse con '.' y no con ',')"},
                         {"valid" : function(input) {return input.replace(/[^\d]/g,'').length < 7; }, "error": "El valor ingresado es muy largo"},
-                    ],
-                     "specific" :
-                    [
                         {"valid" : function(input) {return parseInt(input) >= -273;}, "error": "El valor ingresado está debajo del <a href='http://es.wikipedia.org/wiki/Cero_absoluto'>0 absoluto</a>"},
-                    ]
-                   };
+                   ];
 
   function celcius_to_fahrenheit(celcius) {
     return ((parseFloat(celcius)*9.0)/5.0) + 32;
@@ -41,7 +43,7 @@
     $("#output").empty();
     input = $("#input")[0];
     var converter = converters[$("#input_type")[0].value];
-    var valid = validate(validators.globals, input.value) && validate(validators.specific, input.value);
+    var valid = validate(validators, input.value);
     if (valid) {
         $("#output").append(converter(input.value));
     }
@@ -66,7 +68,7 @@
   
 </script>
 <h1>CelFar</h1>
-<p>Conversor de temperaturas entre grados <a href="http://es.wikipedia.org/wiki/Grado_Celsius">Celcius</a> y <a href="http://es.wikipedia.org/wiki/Grado_Fahrenheit">Fahrenheit</a></p>
+<p id="description">Conversor de temperaturas entre grados <a href="http://es.wikipedia.org/wiki/Grado_Celsius">Celcius</a> y <a href="http://es.wikipedia.org/wiki/Grado_Fahrenheit">Fahrenheit</a></p>
 
 <div id="converter">
     <form id="converterform" action="">
