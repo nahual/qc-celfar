@@ -4,8 +4,12 @@ body {
 
 table, th, tr, td {
     border: solid 1px;
-    text-align: left;
+    text-align: center;
     vertical-align: top;
+}
+
+td.desc {
+    text-align: left;
 }
 
 th {
