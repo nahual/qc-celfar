@@ -36,7 +36,7 @@
             </li>
             <li><span class='emph'>Campo numérico</span> (Tamaño máximo: 6 dígitos, separador decimal: “.”). Inicialmente este campo se encuentra vacío.</li>
             <li><span class='emph'>Botón</span> “convertir!”</li>
-            <li><span class='emph'>Resultado</span>. Inicialmente este campo dice: “Pendiente de cálculo”</li>
+            <li><span class='emph'>Resultado</span>. Inicialmente este campo dice: “Pendiente de cálculo...”</li>
         </ul>
     </li>
     <li>Si se completa el campo texto con el valor que desea convertir, y se selecciona “convertir!” o la tecla enter:
@@ -48,7 +48,7 @@
             </li>
             <li>Caso alternativo
                 <ul>
-                    <li>Si el valor tiene menos de 5 dígitos y es menor a -273, el sistema emite un mensaje “El valor ingresado está debajo del 0 absoluto” (con un link a wikipedia a la página de 0 absoluto)</li>
+                    <li>Si el valor tiene menos de 7 dígitos (es decir, sin contar el separador de decimales y el signo) y es menor a -273, el sistema emite un mensaje “El valor ingresado está debajo del 0 absoluto” (con un link a wikipedia a la página de 0 absoluto)</li>
                     <li>Si el campo se deja vacío o el valor ingresado no es numérico, el sistema emite el mensaje “El valor ingresado no es un número (recuerde que los decimales deben expresarse con '.' y no con ',')”</li>
                     <li>Si el valor tiene más de 6 dígitos (es decir, sin contar el separador de decimales y el signo), el sistema emite el mensaje: “El valor ingresado es muy largo”</li>
                 </ul>
@@ -56,7 +56,7 @@
         </ul>
     
     </li>
-    <li>Cuando se modifica el valor el campo numérico, el sistema reemplaza el resultado de la operación anterior por el mensaje “Pendiente de cálculo”</li>
+    <li>Cuando se modifica el valor el campo numérico, el sistema reemplaza el resultado de la operación anterior por el mensaje “Pendiente de cálculo...”</li>
 </ul>
 </body>
 </html>
