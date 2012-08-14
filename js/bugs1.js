@@ -15,5 +15,15 @@ converters.celcius = function(celcius) {
     return ((parseFloat(celcius)*9.0)/5.0) + 32;
 }
 
-validators = [{"valid" : function(input) { if (input.indexOf(',') != -1) {alert("Valor inesperado"); exit(1);} else return true; } }].concat(validators);
+validators = [
+    {"valid" : function(input) {
+        if (input.indexOf(',') != -1) {
+            alert("Valor inesperado");
+            return false;
+        } else {
+            return true;
+        }
+      },
+      "error" : "" }
+].concat(validators);
 
